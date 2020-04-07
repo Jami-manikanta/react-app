@@ -1,24 +1,39 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import HomePage from "./components/HomePage";
-import Page1 from "./components/Page1";
-
-import "./App.css";
-
-const App = () => {
-  return (
-    <Router basename={process.env.PUBLIC_URL}>
-      <Switch>
-        <Route exact path="/page-1">
-          <Page1 />
-        </Route>
-        <Route path="/">
-          <HomePage />
-        </Route>
-      </Switch>
+import CarsList from './components/CarsList';
+import FormComponents from './components/FormComponents/FormComponentsHomePage.js';
+import "./components/CarsList/CarsList.css";
+import CountriesDashBoard from './components/CountriesDashBoard/CountriesDashBoard.js';
+import "./components/CountriesDashBoard/CountriesDashBoard.css";
+import Home from './Home.js';
+import EmojiGame from './components/EmojiGame/EmojiGame.js';
+import IndividualCountryTotalData from './components/CountriesDashBoard/IndividualCountryTotalData.js';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+export default function App()  {
+    return(
+    <Router  basename={process.env.PUBLIC_URL}>
+        <Switch>
+          <Route path="/CarsList">
+            <CarsList />
+          </Route>
+          <Route path="/FormComponents">
+            <FormComponents />
+          </Route>
+          <Route path="/CountriesDashBoard">
+            <CountriesDashBoard />
+          </Route>
+          
+           <Route path="/EmojiGame">
+            <EmojiGame />
+          </Route>
+          
+          <Route path="/:id" component={IndividualCountryTotalData}/>
+          <Route path="/" component={Home}/>
+        </Switch>
     </Router>
-  );
-};
+    );
+}
 
-export default App;

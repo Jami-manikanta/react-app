@@ -1,0 +1,79 @@
+.button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius:5px;
+}
+
+.button1 {
+    background-color: green;
+    color: white;
+    border: 2px solid green;
+}
+
+.button1:hover {
+    background-color: green;
+    color: white;
+}
+
+.button3 {
+    background-color:white ;
+    color: #0066ff;
+    border: 2px solid #0066ff;
+}
+
+.button3:hover {
+    background-color: #0066ff;
+    color: white;
+}
+
+.button2 {
+    background-color:white ;
+    color: red;
+    border: 2px solid red;
+}
+
+.button2:hover {
+    background-color: red;
+    color: white;
+}
+
+.button4{
+    background-color:#0066ff ;
+    color:white ;
+    border: 2px solid #0066ff;
+}
+.speed-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.add-car-button{
+    display:flex;
+    justify-content:flex-end;
+}
+.carid-and-remove-button{
+      display: flex;
+      justify-content: space-between
+}
+.remove-button{
+       color:Red;
+       font-size:25px;
+       margin-right: 25px;
+}
+.individual-cars{
+    padding:20px 100px;
+}
+#root{
+    box-shadow: 5px 5px 10px grey;
+    margin-right: 25px;
+    margin-left:25px;
+    padding:50px;
+}
