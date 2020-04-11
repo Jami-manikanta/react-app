@@ -7,8 +7,14 @@ const Counterpage=styled.div`${tw`flex h-screen justify-center items-center`}`;
 import stores from '../../stores';
 const counterStore = stores.counterStore;
 
+type Props = {
+  initialCount: number
+}
+
 @observer
-class CounterPage extends Component {
+class CounterPage extends Component<Props> {
+  functionCalling
+
   handleIncrement = () => {
     counterStore.incrementCounter()
   }
