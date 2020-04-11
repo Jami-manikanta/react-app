@@ -1,8 +1,11 @@
-import React, { Component } from 'react'
-import { observer, inject } from 'mobx-react'
-
-import stores from '../../stores'
-const counterStore = stores.counterStore
+import React, { Component } from 'react';
+import { observer } from 'mobx-react';
+import tw from 'tailwind.macro';
+import styled from '@emotion/styled';
+const CounterHeader=styled.h1`${tw``}`
+const Counterpage=styled.div`${tw`flex h-screen justify-center items-center`}`;
+import stores from '../../stores';
+const counterStore = stores.counterStore;
 
 @observer
 class CounterPage extends Component {
@@ -18,13 +21,15 @@ class CounterPage extends Component {
 
   render() {
     return (
-      <div>
-        <h1>{counterStore.count}</h1>
+      <Counterpage>
+       { /*<h1>{counterStore.count}</h1>*/}
+        <CounterHeader>Counter:{counterStore.count}</CounterHeader>
         <button onClick={this.handleIncrement}>+</button>
+       
         <button onClick={this.handleDecrement}>-</button>
-      </div>
+      </Counterpage>
     )
   }
 }
 
-export default CounterPage
+export default CounterPage;
