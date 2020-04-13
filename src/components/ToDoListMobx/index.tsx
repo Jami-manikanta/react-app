@@ -1,9 +1,10 @@
 /*global React*/
 /*global ReactDOM*/
 import React from 'react';
-import './index.css';
 import {observable,action} from 'mobx';
 import {observer} from 'mobx-react';
+
+import './index.css';
 class Todo extends React.Component {
     constructor(props) {
         super(props);
