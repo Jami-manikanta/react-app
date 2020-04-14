@@ -8,7 +8,7 @@ import stores from '../../stores';
 const counterStore = stores.counterStore;
 
 type Props = {
-  initialCount: number
+  initialCount: number;
 }
 
 @observer

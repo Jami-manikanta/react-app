@@ -6,10 +6,7 @@ export default function Home() {
         <nav>
           <ul>
             <li>
-              <Link to="/counter-page">CounterPage</Link>
-            </li>
-            <li>
-              <Link to="/event-app">EventApp</Link>
+              <Link to="/counterpage">CounterPage</Link>
             </li>
             <li>
               <Link to="/CarsList">CarsList</Link>

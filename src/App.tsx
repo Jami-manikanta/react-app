@@ -4,7 +4,6 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import {configure} from 'mobx';
 
 import Home from './Home.js';
 import CarsList from './components/CarsList';
@@ -15,25 +14,19 @@ import "./components/CountriesDashBoard/CountriesDashBoard.css";
 import EmojiGame from './components/EmojiGame/EmojiGame.js';
 import IndividualCountryTotalData from './components/CountriesDashBoard/IndividualCountryTotalData.js';
 import CounterPage from './components/CounterPage';
-import TodoList from './components/ToDoListMobx/index.js';
-import EventApp from './components/EventApp/EventApp.js';
+import TodoList from './components/ToDoListMobx/index';
+//import EventApp from './components/EventApp/EventApp.js';
 //import themeStore from './stores/ThemeStore';
 
 
-configure({enforeceActions:true});
 
 export default function App()  {
     return(
     <Router  basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route path="/counter-page">
+          <Route path="/counterpage">
             <CounterPage />
           </Route>
-          
-          <Route path="/event-app">
-            <EventApp />
-          </Route>
-          
           <Route path="/CarsList">
             <CarsList />
           </Route>

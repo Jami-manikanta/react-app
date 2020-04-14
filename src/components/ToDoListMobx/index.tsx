@@ -5,7 +5,16 @@ import {observable,action} from 'mobx';
 import {observer} from 'mobx-react';
 
 import './index.css';
-class Todo extends React.Component {
+
+type ToDoprops={
+      checkTodo:any,
+      eachObj:any,
+      removeTodo:any,
+      checkStatus:any
+}
+
+
+class Todo extends React.Component<ToDoprops>{
     constructor(props) {
         super(props);
     }
@@ -17,7 +26,18 @@ class Todo extends React.Component {
           </div>;
     }
 }
-class TodoAppBottom extends React.Component {
+
+type TodoAppBottomprops={
+    numOfCompletedTodos:any,
+    clearCompleted:any,
+    allTodos:any,
+    active:any,
+    completed:any,
+    numOfTodos:any
+    
+}
+
+class TodoAppBottom extends React.Component<TodoAppBottomprops> {
     constructor(props) {
         super(props);
     }
@@ -39,11 +59,11 @@ class TodoAppBottom extends React.Component {
 }
 @observer class TodoList extends React.Component {
     
-         @observable todoId = 0;
-         @observable listOfTodos= [];
-         @observable numOfItems= 0;
-         @observable todoFooterState= "all";
-         @observable numOfCompletedTodos= 0;
+         @observable todoId:any = 0;
+         @observable listOfTodos:any= [];
+         @observable numOfItems:any= 0;
+         @observable todoFooterState:any= "all";
+         @observable numOfCompletedTodos:any= 0;
         
     @action.bound
     addTodoToTodosList(event){
@@ -66,11 +86,13 @@ class TodoAppBottom extends React.Component {
         if (eachObj.todoCheckStatus)
             return <input className="entered-todo-checked" type="text" defaultValue={eachObj.todo} disabled/>;
         else
-            return <input style={eachObj.todoOnfocus?styles:null} className="entered-todo-unchecked" onFocus={()=>this.onfocus(eachObj)} onBlur={()=>this.onfocus(eachObj)} type="text" defaultValue={eachObj.todo}/>;
+            return <input  className="entered-todo-unchecked" onFocus={()=>this.onfocus(eachObj)} onBlur={()=>this.onfocus(eachObj)} type="text" defaultValue={eachObj.todo}/>;
     }
     
+   // style={eachObj.todoOnfocus?styles:null}
+    
         @action.bound
-    checkTodo(eachObj){
+       checkTodo(eachObj){
         let dupList = this.listOfTodos.slice(0);
         let index = dupList.indexOf(eachObj);
         console.log(index)
