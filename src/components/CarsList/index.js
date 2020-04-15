@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 // Write your React Code here
 /*global ReactDOM*/
 /*global React*/

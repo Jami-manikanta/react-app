@@ -6,15 +6,7 @@ import {observer} from 'mobx-react';
 
 import './index.css';
 
-type ToDoprops={
-      checkTodo:any,
-      eachObj:any,
-      removeTodo:any,
-      checkStatus:any
-}
-
-
-class Todo extends React.Component<ToDoprops>{
+class Todo extends React.Component{
     constructor(props) {
         super(props);
     }
@@ -27,17 +19,7 @@ class Todo extends React.Component<ToDoprops>{
     }
 }
 
-type TodoAppBottomprops={
-    numOfCompletedTodos:any,
-    clearCompleted:any,
-    allTodos:any,
-    active:any,
-    completed:any,
-    numOfTodos:any
-    
-}
-
-class TodoAppBottom extends React.Component<TodoAppBottomprops> {
+class TodoAppBottom extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -59,11 +41,11 @@ class TodoAppBottom extends React.Component<TodoAppBottomprops> {
 }
 @observer class TodoList extends React.Component {
     
-         @observable todoId:any = 0;
-         @observable listOfTodos:any= [];
-         @observable numOfItems:any= 0;
-         @observable todoFooterState:any= "all";
-         @observable numOfCompletedTodos:any= 0;
+         @observable todoId= 0;
+         @observable listOfTodos= [];
+         @observable numOfItems= 0;
+         @observable todoFooterState= "all";
+         @observable numOfCompletedTodos= 0;
         
     @action.bound
     addTodoToTodosList(event){
