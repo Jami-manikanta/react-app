@@ -2,7 +2,7 @@ import {observable} from 'mobx';
 class ThemeStore{
     @observable selectedTheme
     constructor(){
-        this.selectedTheme="light";
+        this.selectedTheme="Dark";
     }
     
     getCurrentTheme(){
@@ -10,10 +10,10 @@ class ThemeStore{
     }
     
     setCurrentTheme(){
-        if(this.selectedTheme==="light"){
-            this.selectedTheme="dark";
+        if(this.selectedTheme==="Light"){
+            this.selectedTheme="Dark";
         }else{
-            this.selectedTheme="light";
+            this.selectedTheme="Light";
         }
     }
 }
