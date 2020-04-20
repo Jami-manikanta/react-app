@@ -7,8 +7,7 @@ export const GridGameWrapper=styled.div`${tw`h-screen flex flex-col justify-cent
 background-color:${(props)=> (props.selectedTheme==='Light')?'white':'black'};
 color:${(props)=> (props.selectedTheme==='Light')?'black':'white'};`;
 export const Themebutton=styled.button`${tw `p-2 -my-2 border border-solid `}`;
-
-
+export const GameCompletedMessage=styled.div`${tw`text-3xl text-green-600`}`;
 
 
 

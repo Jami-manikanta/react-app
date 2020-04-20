@@ -8,6 +8,11 @@ export default function Home() {
             <li>
               <Link to="/grid-game">GridGame</Link>
             </li>
+            <li>
+              <Link to="/api-practice">
+                Rest api
+              </Link>
+            </li>
             
             <li>
                <Link to="/">Home</Link>

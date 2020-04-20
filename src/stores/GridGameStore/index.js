@@ -37,6 +37,7 @@ class GridGameStore {
       resetGridGame(){
         this.listOfGrids=[];
         this.gridSize=3;
+        this.toplevel=this.level>this.toplevel?this.level:this.toplevel;
         this.level=0;
         this.gridWidth=300;
         this.isCompleted=false;

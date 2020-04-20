@@ -1,0 +1,47 @@
+[{
+    "gridSize":3,
+    "hiddenCellCount":3,
+    "gridWidth":300
+
+
+},
+{
+    "gridSize":4,
+    "hiddenCellCount":4,
+    "gridWidth":330
+
+
+},
+{
+    "gridSize":5,
+    "hiddenCellCount":5,
+    "gridWidth":360
+
+
+},
+{
+    "gridSize":6,
+    "hiddenCellCount":6,
+    "gridWidth":390
+
+
+},
+{
+    "gridSize":7,
+    "hiddenCellCount":7,
+    "gridWidth":420
+
+
+},
+{
+    "gridSize":8,
+    "hiddenCellCount":8,
+    "gridWidth":450
+
+
+},
+{
+    "gridSize":9,
+    "hiddenCellCount":9,
+    "gridWidth":480
+}]
