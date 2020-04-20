@@ -1,5 +1,5 @@
 import {observable,action,computed} from 'mobx';
-import GridModel from '../models/GridModel';
+import GridModel from '../models/GridModel/index';
 
 class GridGameStore {
     @observable listOfGrids=[];

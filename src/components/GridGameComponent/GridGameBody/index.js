@@ -11,11 +11,9 @@ class GridGameBody extends React.Component{
     const {gridSize,resetGridGame,listOfGrids,gridWidth,level}=gridGameStore;
     clearInterval(this.intervalId)
     this.intervalId=setInterval(()=>resetGridGame(),Number(`${gridSize**2}000`));
-    return (level<2)  ? (<div style={{display:'flex',flexWrap:'wrap',width:gridWidth}}>
+    return (level<=3)  ? (<div style={{display:'flex',flexWrap:'wrap',width:gridWidth}}>
        {listOfGrids.map((gridModel)=><Grid key={Math.random().toString()} gridModel={gridModel} gridWidth={gridWidth/gridSize}/>)}
     </div>):(<GridGameCompleted/>)
-    
-    
   }
 }
 export default GridGameBody

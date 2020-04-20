@@ -11,7 +11,7 @@ class LeaderBoard extends React.Component{
                 </PlayerNameStyle>
 
                 <PlayerScoreStyle>
-                    8{items.level}
+                    ...{items.level}
                 </PlayerScoreStyle>
             </PlayerDetails>)
         }

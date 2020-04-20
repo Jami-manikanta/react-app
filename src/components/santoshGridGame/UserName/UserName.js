@@ -6,7 +6,7 @@ from './userNameStyle.js'
 
 
 class UserDetailField extends React.Component{
-    id:
+    id;
     playerName;
     difficulty;
 
@@ -19,8 +19,6 @@ class UserDetailField extends React.Component{
             playerName:this.playerName,
             difficulty:"Easy",
         });
-        console.log("ghjk");
-        // newGridStore.up
     }
     onEnterPlayerName=(event)=>{
         if(event.keyCode===13){

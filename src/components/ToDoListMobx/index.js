@@ -47,6 +47,11 @@ class TodoAppBottom extends React.Component {
          @observable todoFooterState= "all";
          @observable numOfCompletedTodos= 0;
         
+     componentDidMount(){
+        let x= fetch('https://jsonplaceholder.typicode.com/todos').then(res=>res.json()).then(json=>(json));
+        console.log(x);
+     }
+
     @action.bound
     addTodoToTodosList(event){
         if (event.key === "Enter" && event.target.value != "") {
@@ -57,7 +62,7 @@ class TodoAppBottom extends React.Component {
            // console.log(updatedListOfTodos);
             event.target.value = "";
             this.listOfTodos= updatedListOfTodos ;
-          //  console.log(this.listOfTodos);
+            console.log(this.listOfTodos);
         }
     }
     

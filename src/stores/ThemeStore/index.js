@@ -18,6 +18,6 @@ class ThemeStore{
     }
 }
 
-const themeStore=new ThemeStore();
+const themeStoreOne=new ThemeStore();
 
-export default themeStore;
+export default themeStoreOne;

@@ -1,12 +1,12 @@
 import React from 'react';
 import {observer} from 'mobx-react';
 import {Header,HeaderTheme,Toplevel,Themebutton} from '../GridGameCss';
-import themeStore from '../../../stores/ThemeStore';
+import themeStoreOne from '../../../stores/ThemeStore/index.js';
 import  gridGameStore  from "../../../stores/GridGameStore";
 @observer
 class GridGameHeader extends React.Component{
     onhandleClick=()=>{
-        themeStore.setCurrentTheme();
+        themeStoreOne.setCurrentTheme();
     } 
     render(){
         const {level,toplevel,gridWidth}=gridGameStore;
@@ -15,7 +15,7 @@ class GridGameHeader extends React.Component{
                <Toplevel><b>Top Level:{toplevel}</b></Toplevel>
                <HeaderTheme>
                  <span><b>Level:{level}</b></span>
-                 <Themebutton onClick={this.onhandleClick}><b>Mode: {themeStore.selectedTheme}</b></Themebutton>
+                 <Themebutton onClick={this.onhandleClick}><b>Mode: {themeStoreOne.selectedTheme}</b></Themebutton>
                </HeaderTheme>
            </Header>
             );

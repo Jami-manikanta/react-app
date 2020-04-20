@@ -53,15 +53,15 @@ class Cell extends React.Component{
         return(
             <EachCellStyle  onClick={this.onCellClick}
                 cellBackground = {cellBackground}
-                isHidden={true} 
+                isHidden={item.isHidden}
                 gridWidth={gridWidth} 
                 gridSize={gridSize}>
                 <EachCellAnimationChildDiv
                     hiddenCellBackground={hiddenCellBackground}
+                    isWrong={item.isWrong}
                     animation={this.animation} 
                     isShowHiddenCells={this.isShowHiddenCells}
-                     gridWidth={gridWidth} gridSize={gridSize}>
-                    
+                    gridWidth={gridWidth} gridSize={gridSize}>
                 </EachCellAnimationChildDiv>
             </EachCellStyle>
         )

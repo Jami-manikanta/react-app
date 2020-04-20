@@ -2,7 +2,7 @@ import React from 'react';
 import { observable } from "mobx";
 import { observer } from "mobx-react";
 import gridGameStore from "../../../stores/GridGameStore";
-import themeStore from "../../../stores/ThemeStore";
+import themeStoreOne from "../../../stores/ThemeStore/index";
 
 @observer
 class Grid extends React.Component{
@@ -22,16 +22,9 @@ class Grid extends React.Component{
      }
 
     render(){
-       const {gridModel,gridWidth}=this.props;
+       const {gridModel,gridWidth}=this.props;      
        return (
-      /* <button style={{width:`${gridWidth-7}px`,height:`${gridWidth-7}px`,
-       backgroundColor:gridModel.isClickableGrid&&this.isGridDisabled?'#00ffff':(this.inCorrectGrid==true)?'red':'#264d73',
-       margin:'3px'
-        }}
-       onClick={this.handleOnClick}
-       disabled={this.isGridDisabled}/>);*/
-
-       (themeStore.getCurrentTheme()=='Dark')?
+       (themeStoreOne.getCurrentTheme()=='Dark')?
       (<button style={{width:`${gridWidth-7}px`,height:`${gridWidth-7}px`,
        backgroundColor:gridModel.isClickableGrid&&this.isGridDisabled?'#00ffff':(this.inCorrectGrid==true)?'red':'#264d73',
        margin:'3px'
@@ -39,13 +32,13 @@ class Grid extends React.Component{
        onClick={this.handleOnClick}
        disabled={this.isGridDisabled}/>)
        :
-        ( <button style={{width:`${gridWidth-7}px`,height:`${gridWidth-7}px`,
+         <button style={{width:`${gridWidth-7}px`,height:`${gridWidth-7}px`,
           backgroundColor:gridModel.isClickableGrid&&this.isGridDisabled?'green':(this.inCorrectGrid==true)?'red':'#264d73',
           margin:'3px'
            }}
           onClick={this.handleOnClick}
-       disabled={this.isGridDisabled}/>));
-    } 
+          disabled={this.isGridDisabled}/>);
+          } 
 }
 
 export default Grid;

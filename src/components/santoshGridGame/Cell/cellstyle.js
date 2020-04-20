@@ -29,8 +29,8 @@ const EachCellAnimationChildDiv = styled.div`
                    width:100%;
                    height:100%
                 }
-            `}
-             `
+            `}`
+             
             :
             css `
             0.3s ease ${keyframes`
