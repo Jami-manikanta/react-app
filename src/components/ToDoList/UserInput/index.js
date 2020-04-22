@@ -1,5 +1,10 @@
+import React from 'react';
+import styled from '@emotion/styled';
+import tw from 'tailwind.macro';
 import todoStore from "../../../stores/TodoStore";
 
+const UserInputField=styled.input`${tw`h-16 pl-4 text-3xl`};
+width:'500px`;
 class UserInput extends Component {
     state = { 
         userInput=''

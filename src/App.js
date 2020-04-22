@@ -4,14 +4,18 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import {Provider} from 'mobx-react';
 
+import stores from './stores'; 
 import Home from './Home.js';
 import GridGameComponent from './components/GridGameComponent'
 import GridMainApp from './components/santoshGridGame/GridMainDiv/GridMainDiv.js';
 //import SampleExample from "./components/SampleExample";
 import TodoList from "./components/ToDoListMobx";
+import UsersPage from "./components/UsersPage/index.js";
 export default function App()  {
     return(
+    <Provider {...stores}>
     <Router  basename={process.env.PUBLIC_URL}>
         <Switch>
         <Route path="/grid-game">
@@ -23,6 +27,8 @@ export default function App()  {
            <Route path="/api-practice">
             <GridMainApp/>
           </Route>
+          <Route path="/common-api" component={UsersPage}/>
+          
          {/* <Route path="/sample-example">
             <SampleExample/>
     </Route>*/}
@@ -30,6 +36,7 @@ export default function App()  {
           <Route path="/" component={Home}/>
         </Switch>
     </Router>
+    </Provider>
     );
 }
 

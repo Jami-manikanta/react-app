@@ -12,6 +12,10 @@ export default function Home() {
               <Link to="/grid-game">GridGame</Link>
             </li>
             <li>
+              <Link to="/common-api">CommonAPI</Link>
+            </li>
+
+            <li>
               <Link to="/sample-example">sample Example</Link>
             </li>
 
