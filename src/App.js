@@ -13,11 +13,13 @@ import GridMainApp from './components/santoshGridGame/GridMainDiv/GridMainDiv.js
 //import SampleExample from "./components/SampleExample";
 import TodoList from "./components/ToDoListMobx";
 import UsersPage from "./components/UsersPage/index.js";
+import TodoListApp from './components/ToDoListApp/index.js'
 export default function App()  {
     return(
     <Provider {...stores}>
     <Router  basename={process.env.PUBLIC_URL}>
         <Switch>
+        <Route path="/todo" component={TodoListApp}/>
         <Route path="/grid-game">
             <GridGameComponent />
           </Route>

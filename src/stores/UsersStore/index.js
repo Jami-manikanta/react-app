@@ -4,7 +4,7 @@ import {create} from 'apisauce';
 import {networkCallWithApisauce} from '../../utils/APIUtils.js';
 import {apiMethods} from '../../constants/APIConstants';
 import {bindPromiseWithOnSuccess} from '@ib/mobx-promise';
-import UserService from '../../services/UserService/index.fixture';
+import UserService from '../../services/UserService/index.api';
 
 class UsersStore  {
     @observable getUsersApiStatus

@@ -3,10 +3,10 @@ class TodoModel{
     todoId;
     @observable todoName;
     @observable todoIsCompleted;
-    constructor(){
+    constructor(props){
         this.todoId=props.todoId;
         this.todoName=props.todoName;
-        this.todoIsCompleted=false;
+        this.todoIsCompleted=props.todoIsCompleted;
     }
     
     @action.bound
@@ -15,7 +15,7 @@ class TodoModel{
     }
 
     @action.bound
-    checkOrUnCheckTheTodo(){
+    checkOrUnCheckTodo(){
         if(this.todoIsCompleted===false){
             this.todoIsCompleted=true;
         }

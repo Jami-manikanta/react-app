@@ -3,7 +3,7 @@ import { networkCallWithApisauce } from "../../utils/APIUtils";
 import { apiMethods } from "../../constants/APIConstants";
 import { action } from "mobx";
 
-class UserService  {
+class TodoService  {
     api
     constructor(){
         this.api=create({
@@ -14,9 +14,9 @@ class UserService  {
     @action.bound
    getUsersAPI(){
     return networkCallWithApisauce(
-        this.api,'users/',{},apiMethods.get
+        this.api,'todos/',{},apiMethods.get
     );
    }
 }
  
-export default UserService;
+export default TodoService;
