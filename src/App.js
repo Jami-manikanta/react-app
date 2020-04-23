@@ -13,7 +13,18 @@ import GridMainApp from './components/santoshGridGame/GridMainDiv/GridMainDiv.js
 //import SampleExample from "./components/SampleExample";
 import TodoList from "./components/ToDoListMobx";
 import UsersPage from "./components/UsersPage/index.js";
-import TodoListApp from './components/ToDoListApp/index.js'
+import TodoListApp from './components/ToDoListApp/index.js';
+
+import {enableLogging} from 'mobx-logger';
+const config={
+  predicate:()=>true,
+  action:true,
+  reaction:true,
+  transaction:true,
+  compute:true
+};
+enableLogging(config)
+
 export default function App()  {
     return(
     <Provider {...stores}>

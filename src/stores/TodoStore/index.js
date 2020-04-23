@@ -48,6 +48,7 @@ class TodoStore{
         .catch(this.setUsersAPIError)
     }
 
+    @action.bound
     clearStore(){
         this.init()
     }

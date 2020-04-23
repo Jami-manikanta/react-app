@@ -20,6 +20,11 @@ class TodoListApp extends React.Component {
         this.doNetworkCalls()
     }
 
+    componentWillUnmount(){
+        const {clearStore} = this.getTodoStore();
+        clearStore()
+    }
+
     getTodoStore(){
         return this.props.todoStore;
     }
@@ -50,3 +55,5 @@ class TodoListApp extends React.Component {
 }
  
 export default TodoListApp;
+
+
