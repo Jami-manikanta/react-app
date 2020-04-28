@@ -5,7 +5,7 @@ export const ACCESS_TOKEN = 'dG6EABne5a'
 export function getCookie(key) {
   return Cookie.get(key)
 }
-
+ 
 function setCookie(key, value) {
   Cookie.set(key, value, {
     expires: 30,

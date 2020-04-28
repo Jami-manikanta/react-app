@@ -1,17 +1,28 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import {  spinner }  from '@fortawesome/fontawesome-free-solid';
 class SampleExample extends React.Component {
-    state = {  }
+    state = { 
+          loading:false
+     }
 
-    funtion fetchedData(){
-          fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => console.log(res.json()))
-        .then(res => res.map(user => user.username))
-        .then(userNames => console.log(userNames));
-      
-    }
+     onLoading=()=>{
+         alert(1)
+         this.setState({loading:true})
+     }
+
     render() { 
-        return( fetchedData() );
+        const {loading}=this.state
+        return( 
+
+           <button style={{backgroundColor:'blue',padding:'10px',margin:'40px'}} onClick={this.onLoading} disabled={loading}>
+                
+
+              {loading && <i className="fa fa-refresh"></i> } Login
+              
+           </button>
+        );
     }
 }
  
-//export default SampleExample;
+export default SampleExample;

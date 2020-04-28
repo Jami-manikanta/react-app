@@ -1,6 +1,21 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
+import {getAccessToken} from './utils/StorageUtils'
 export default function Home() {
+ function gotoGridscreenIfLoggedIn(){
+    return(
+      <Redirect
+         to={
+           {
+             pathname:'/sample-example'
+           }
+         }/>
+    );
+  }
+
+if(getAccessToken()===undefined){
+  return gotoGridscreenIfLoggedIn();
+}else{
   return (
       <div>
         <nav>
@@ -12,18 +27,24 @@ export default function Home() {
               <Link to="/grid-game">GridGame</Link>
             </li>
             <li>
+              <Link to="/sample">Loading</Link>
+            </li>
+            <li>
               <Link to="/common-api">CommonAPI</Link>
             </li>
-
             <li>
-              <Link to="/sample-example">sample Example</Link>
+              <Link to="/sample-example">LoginPage</Link>
+            </li>
+            <li>
+              <Link to="/sample">sample Example</Link>
             </li>
             <li>
               <Link to="/todo">TodoListApp</Link>
             </li>
 
-
-
+            <li>
+              <Link to="/ecommerce-app">E-Commerce</Link>
+            </li>
             <li>
               <Link to="/api-practice">
                 Rest api
@@ -37,3 +58,4 @@ export default function Home() {
         </nav>
        </div>
  )}
+  }

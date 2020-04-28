@@ -7,7 +7,6 @@ class Todo extends React.Component {
     removeTodo=()=>{
          const {removeTodo}=this.props;
          const {todo}=this.props;
-       // console.log(this.props)
         removeTodo(todo);
     } 
         updateTodoName=(event)=>{
