@@ -1,30 +1,27 @@
-import React from 'react'
-import { SizesFilterDiv,SizesButtons,SizesHeading,VerySmallSize,SmallSize,LargeSize,MediumSize,XlSize,XxlSize } from "../../styledComponents/SizesFilterStyledComponents";
-import { action } from "mobx";
+import React from "react";
+import {
+    SizesFilterDiv,
+    SizesButtons,
+    SizesHeading,
+} from "../../styledComponents/SizesFilterStyledComponents";
 import { observer, inject } from "mobx-react";
+import SizeButtonComponent from "../SizeButtonComponent";
 
-@inject('productStore')
+@inject("productStore")
 @observer
-class SizesFilter extends React.Component{
-     
-    @action.bound
-    handleClick(event){
-        //alert(event.target.value)
-        const {productStore}=this.props
-        productStore.addSizeToSizeFilter(event.target.value);
-    }
-    render(){
-        return(
+class SizesFilter extends React.Component {
+    render() {
+        return (
             <SizesFilterDiv>
-                 <SizesHeading>Sizes:</SizesHeading>
-                 <SizesButtons>
-                     <VerySmallSize value='XS' onClick={this.handleClick}>XS</VerySmallSize>
-                     <SmallSize value='S' onClick={this.handleClick}>S</SmallSize>
-                     <MediumSize value='M' onClick={this.handleClick}>M</MediumSize>
-                     <LargeSize value='L' onClick={this.handleClick}>L</LargeSize>
-                     <XlSize value='XL' onClick={this.handleClick}>XL</XlSize>
-                     <XxlSize value='XXL' onClick={this.handleClick}>XXL</XxlSize>
-                 </SizesButtons>
+                <SizesHeading>Sizes:</SizesHeading>
+                <SizesButtons>
+                    <SizeButtonComponent value="XS" />
+                    <SizeButtonComponent value="S" />
+                    <SizeButtonComponent value="M" />
+                    <SizeButtonComponent value="L" />
+                    <SizeButtonComponent value="XL" />
+                    <SizeButtonComponent value="XXL" />
+                </SizesButtons>
             </SizesFilterDiv>
         );
     }

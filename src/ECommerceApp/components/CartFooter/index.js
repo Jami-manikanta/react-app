@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import { inject, observer } from "mobx-react";
-import { CartFooterDiv } from "../../styledComponents/CartFooterDivStyledComponents";
+import {
+    CartFooterDiv,
+    CartSubTotalDiv,
+    CheckOutButton,
+    CartSubTotal,
+    CartSubTotalHeading,
+} from "../../styledComponents/CartFooterDivStyledComponents";
 
 @inject("cartStore")
 @observer
@@ -11,9 +17,16 @@ class CartFooter extends Component {
     };
 
     render() {
+        const { totalCartAmount } = this.props.cartStore;
         return (
             <CartFooterDiv>
-                <button onClick={this.resetCart}>CHECKOUT</button>
+                <CartSubTotalDiv>
+                    <CartSubTotalHeading>SUBTOTAL</CartSubTotalHeading>
+                    <CartSubTotal>₹{totalCartAmount.toFixed(2)}</CartSubTotal>
+                </CartSubTotalDiv>
+                <CheckOutButton onClick={this.resetCart}>
+                    CHECKOUT
+                </CheckOutButton>
             </CartFooterDiv>
         );
     }

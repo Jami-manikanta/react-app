@@ -2,10 +2,15 @@ import styled from "@emotion/styled";
 import tw from "tailwind.macro";
 
 const CartHeaderDiv = styled.div`
-    ${tw`flex justify-center items-center m-4 `}
+    ${tw`flex m-4 `};
+    height: 8vh;
 `;
 const CartText = styled.span`
     ${tw`font-bold`}
 `;
 
-export { CartHeaderDiv, CartText };
+const Close = styled.button`
+    ${tw` bg-gray-800 h-8 w-8 p-1 absolute top-0 left-0 -mx-8`}
+`;
+
+export { CartHeaderDiv, CartText, Close };

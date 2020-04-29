@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { clearUserSession } from "../../../utils/StorageUtils";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import LoadingWrapperWithFailure from "../../../components/common/LoadingWrapperWithFailure";
 import { inject, observer } from "mobx-react";
 import {
@@ -12,7 +13,7 @@ import {
 } from "../../styledComponents/ECommerceStyledComponents/index";
 import SizesFilter from "../SizesFilter";
 import ECommerceRightSideBody from "../ECommerceRightSideBody";
-import { observable } from "mobx";
+import { observable, action } from "mobx";
 import Cart from "../Cart";
 
 @inject("productStore")
@@ -51,8 +52,6 @@ class ECommerceApp extends React.Component {
     };
 
     renderUsersList = () => {
-        //const { productList } = this.getProductStore();
-        //  console.log(productList)
         return (
             <ECommerce>
                 <ECommerceHeader>
@@ -61,15 +60,12 @@ class ECommerceApp extends React.Component {
                         value="Sign-out"
                         onClick={this.onhandleSignOut}
                     />
-                    <CartButton
-                        type="button"
-                        value="cart"
-                        onClick={this.onCartClick}
-                    />
+                    <CartButton onClick={this.onCartClick}>
+                        <AiOutlineShoppingCart className="w-10 h-10 " />
+                    </CartButton>
                 </ECommerceHeader>
                 <ECommerceBody>
                     <SizesFilter />
-                    {/*}  */}
                     <ECommerceRightSideBody />
                 </ECommerceBody>
             </ECommerce>
@@ -77,14 +73,13 @@ class ECommerceApp extends React.Component {
     };
 
     render() {
-        //  alert(this.isboolean, "ded");
         const {
             getProductListApiStatus,
             getProductListApiError,
         } = this.getProductStore();
         return (
             <div>
-                {this.isboolean && <Cart/>}
+                {this.isboolean && <Cart onCartClick={this.onCartClick} />}
                 <LoadingWrapperWithFailure
                     apiStatus={getProductListApiStatus}
                     apiError={getProductListApiError}

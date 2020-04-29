@@ -27,10 +27,8 @@ class ProductStore {
         const index = this.sizeFilter.indexOf(value);
         if (index === -1) {
             this.sizeFilter.push(value);
-            console.log(this.sizeFilter);
         } else {
             this.sizeFilter.splice(index, 1);
-            console.log(this.sizeFilter);
         }
     }
 

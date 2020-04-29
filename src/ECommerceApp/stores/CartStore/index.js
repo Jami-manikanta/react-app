@@ -32,9 +32,20 @@ class CartStore {
     clearCart() {}
 
     @computed
-    get totalCartAmount() {}
+    get totalCartAmount() {
+        let subtotal = 0;
+        this.CartList.map(
+            (eachProduct) =>
+                (subtotal += eachProduct.price * eachProduct.quantity)
+        );
+        return subtotal;
+    }
 
     @computed
-    get noOfProductsInCart() {}
+    get noOfProductsInCart() {
+        let length = 0;
+        this.CartList.map((eachProduct) => (length += eachProduct.quantity));
+        return length;
+    }
 }
 export default CartStore;

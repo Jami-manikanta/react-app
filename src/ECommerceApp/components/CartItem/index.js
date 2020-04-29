@@ -7,6 +7,7 @@ import {
     CartImageStyle,
     CartProductQuantity,
     CartRemoveButton,
+    CartEachItemAmount,
 } from "../../styledComponents/CartItemStyledComponets";
 import { observer, inject } from "mobx-react";
 
@@ -35,10 +36,12 @@ class CartItem extends React.Component {
                     </CartImageTiltle>
                     <CartImageStyle>
                         <div>{eachProduct.printStyles}</div>
-                        <div>
+                        <CartEachItemAmount>
                             {eachProduct.currencyFormat}
-                            {eachProduct.price}
-                        </div>
+                            {(eachProduct.price * eachProduct.quantity).toFixed(
+                                2
+                            )}
+                        </CartEachItemAmount>
                     </CartImageStyle>
                     <CartProductQuantity>
                         Quantity: {eachProduct.quantity}

@@ -10,7 +10,13 @@ class CartList extends React.Component {
     render() {
         const { CartList } = this.props.cartStore;
         return (
-            <div>
+            <div
+                style={{
+                    overflow: "auto",
+                    height: "68vh",
+                    msOverflowStyle: "none",
+                }}
+            >
                 {CartList.map((eachProduct) => (
                     <CartItem
                         key={eachProduct.cartId}

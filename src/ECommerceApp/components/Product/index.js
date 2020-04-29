@@ -39,7 +39,7 @@ class Product extends React.Component {
                 </ProductPriceDiv>
                 <InstallemntsPrice>
                     or {eachProduct.installments} *{" "}
-                    {eachProduct.price / eachProduct.installments}
+                    {(eachProduct.price / eachProduct.installments).toFixed(2)}
                 </InstallemntsPrice>
                 <AddToCartButton onClick={this.onAddToCart}>
                     Add to cart
