@@ -4,6 +4,8 @@ import {
     CartHeaderDiv,
     CartText,
     Close,
+    CartCloseButton,
+    CartImageInCart,
 } from "../../styledComponents/CartHeaderStyledComponents";
 class CartHeader extends React.Component {
     onCartCloseButton = () => {
@@ -13,13 +15,13 @@ class CartHeader extends React.Component {
     render() {
         return (
             <CartHeaderDiv>
-                <div className="w-1/4">
+                <CartCloseButton>
                     <Close onClick={this.onCartCloseButton}>X</Close>
-                </div>
-                <div className="w-3/4 flex justify-center items-center flex-start -ml-10">
+                </CartCloseButton>
+                <CartImageInCart>
                     <AiOutlineShoppingCart className="w-12 h-12 " />
                     <CartText>Cart</CartText>
-                </div>
+                </CartImageInCart>
             </CartHeaderDiv>
         );
     }

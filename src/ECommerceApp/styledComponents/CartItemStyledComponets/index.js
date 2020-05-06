@@ -17,13 +17,13 @@ const CartProductDetails = styled.div`
 `;
 
 const CartImageTiltle = styled.div`
-    ${tw`text-base flex  justify-between `}
+    ${tw`text-xs flex  justify-between `}
 `;
 const CartImageStyle = styled.div`
-    ${tw`text-xs text-blue-500  flex justify-between`}
+    ${tw`text-xs text-gray-500  flex justify-between`}
 `;
 const CartProductQuantity = styled.div`
-    ${tw`text-xs text-blue-500 `}
+    ${tw`text-xs text-gray-500 `}
 `;
 
 const CartRemoveButton = styled.button`

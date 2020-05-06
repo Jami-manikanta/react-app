@@ -12,7 +12,6 @@ class ProductSort extends React.Component{
    handleChange(event){
        this.value=event.target.value;
       this.props.productStore.sortByMethod(this.value);
-     //  alert(this.value)
    }
     render(){
            return(

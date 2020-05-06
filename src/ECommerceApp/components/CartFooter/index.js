@@ -17,14 +17,17 @@ class CartFooter extends Component {
     };
 
     render() {
-        const { totalCartAmount } = this.props.cartStore;
+        const { totalCartAmount, CartList } = this.props.cartStore;
         return (
             <CartFooterDiv>
                 <CartSubTotalDiv>
                     <CartSubTotalHeading>SUBTOTAL</CartSubTotalHeading>
                     <CartSubTotal>₹{totalCartAmount.toFixed(2)}</CartSubTotal>
                 </CartSubTotalDiv>
-                <CheckOutButton onClick={this.resetCart}>
+                <CheckOutButton
+                    onClick={this.resetCart}
+                    disabled={CartList.length === 0 ? true : false}
+                >
                     CHECKOUT
                 </CheckOutButton>
             </CartFooterDiv>

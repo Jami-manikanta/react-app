@@ -6,7 +6,7 @@
 // } from "react-router-dom";
 // import {Provider} from 'mobx-react';
 
-// import stores from './stores'; 
+// import stores from './stores';
 // import Home from './Home.js';
 // import GridGameComponent from './components/GridGameComponent'
 // import GridMainApp from './components/santoshGridGame/GridMainDiv/GridMainDiv.js';
@@ -47,7 +47,7 @@
 //           <Route path="/sample-example">
 //             <LoginPage/>
 //           </Route>
-          
+
 //           <Route path="/sample">
 //             <SampleExample/>
 //           </Route>
@@ -55,7 +55,7 @@
 //           <Route path="/ecommerce">
 //             <ECommerceApp/>
 //           </Route>
-          
+
 //           <Route path="/" component={Home}/>
 //         </Switch>
 //     </Router>
@@ -63,29 +63,51 @@
 //     );
 // }
 
-
 import React from "react";
 import { Provider } from "mobx-react";
-import {
-     BrowserRouter as Router,
-     Switch,
-     Route
-   } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import stores from "./ECommerceApp/stores";
 import LoginPage from "./Authentication/components/LoginPage";
 import ECommerceApp from "./ECommerceApp/components/ECommerceApp";
-export default function App(){
-  return(
-  <Provider {...stores}>
-    <Router>
-      <Switch>
-          <Route path='/ecommerce-app'>
-       <ECommerceApp/>
-     </Route>
-     <Route path="/" component={LoginPage}/>
-     </Switch>
-     </Router>
-  </Provider>
-  );
+import { observable, autorun, set } from "mobx";
+import { get } from "http";
+export default function App() {
+    return (
+        <Provider {...stores}>
+            <Router>
+                <Switch>
+                    <Route path="/ecommerce-app">
+                        <ECommerceApp />
+                    </Route>
+                    <Route path="/" component={LoginPage} />
+                </Switch>
+            </Router>
+        </Provider>
+    );
 }
 
+// const message = observable(["Rama", "krishna", "jaami"]);
+
+// autorun(() => {
+//     console.log(message.length);
+// });
+
+// message.push("manikanta");
+
+const message = observable({
+    person1: "Rama",
+    person2: "krishna",
+    person3: "jaami",
+    postDate: new Date(),
+});
+
+// autorun(() => {
+//     console.log(Object.keys(message)[0]);
+// });
+
+// message.person4 = "manikanta";
+
+autorun(() => {
+    console.log(get(message, "postDate"));
+});
+set(message, "postDate", new Date());

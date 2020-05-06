@@ -21,10 +21,8 @@ class Product extends React.Component {
         const { eachProduct } = this.props;
         onClickAddToCart(eachProduct);
     };
-
     render() {
         const { eachProduct } = this.props;
-        // console.log(eachProduct.image);
         return (
             <ProductCard>
                 <FreeShipping>Free Shipping</FreeShipping>
@@ -38,7 +36,8 @@ class Product extends React.Component {
                     <ProductPrice>{eachProduct.price}</ProductPrice>
                 </ProductPriceDiv>
                 <InstallemntsPrice>
-                    or {eachProduct.installments} *{" "}
+                    or
+                    {eachProduct.installments} *{" "}
                     {(eachProduct.price / eachProduct.installments).toFixed(2)}
                 </InstallemntsPrice>
                 <AddToCartButton onClick={this.onAddToCart}>
