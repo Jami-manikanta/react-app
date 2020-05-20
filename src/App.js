@@ -66,48 +66,30 @@
 import React from "react";
 import { Provider } from "mobx-react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import stores from "./ECommerceApp/stores";
-import LoginPage from "./Authentication/components/LoginPage";
-import ECommerceApp from "./ECommerceApp/components/ECommerceApp";
-import { observable, autorun, set } from "mobx";
-import { get } from "http";
+//import stores from "./ECommerceApp/stores";
+//import authenticationStore from "./Authentication/stores";
+//import ECommerceApp from "./ECommerceApp/components/ECommerceApp";
+//mport SignInRoute from "./Authentication/Routes/SignInRoute/SignInRoute";
+import HocsPractice from "./common/components/HocsPractice";
+import { observable } from "mobx";
+
+// const x = {
+//     authenticationStore,
+//     stores,
+// }; {...x}
+
 export default function App() {
     return (
-        <Provider {...stores}>
+        <Provider>
             <Router>
                 <Switch>
-                    <Route path="/ecommerce-app">
+                    {/* <Route path="/ecommerce-app">
                         <ECommerceApp />
                     </Route>
-                    <Route path="/" component={LoginPage} />
+                    <Route path="/" component={SignInRoute} /> */}
+                    <Route path="/" component={HocsPractice} />
                 </Switch>
             </Router>
         </Provider>
     );
 }
-
-// const message = observable(["Rama", "krishna", "jaami"]);
-
-// autorun(() => {
-//     console.log(message.length);
-// });
-
-// message.push("manikanta");
-
-const message = observable({
-    person1: "Rama",
-    person2: "krishna",
-    person3: "jaami",
-    postDate: new Date(),
-});
-
-// autorun(() => {
-//     console.log(Object.keys(message)[0]);
-// });
-
-// message.person4 = "manikanta";
-
-autorun(() => {
-    console.log(get(message, "postDate"));
-});
-set(message, "postDate", new Date());

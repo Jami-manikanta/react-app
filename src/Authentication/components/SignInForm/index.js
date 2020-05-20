@@ -1,7 +1,10 @@
+// import SignInForm from "./SignInForm";
+
+// export default SignInForm;
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { observable, action } from "mobx";
-import { observer } from "mobx-react";
+import { observer, inject } from "mobx-react";
 
 import {
     LoginPageStyles,
@@ -15,6 +18,7 @@ import {
 import { setAccessToken } from "../../../utils/StorageUtils";
 import authenticationStore from "../../stores/index";
 
+@inject("authenticationStore")
 @observer
 class LoginPage extends React.Component {
     @observable userInput = "";
