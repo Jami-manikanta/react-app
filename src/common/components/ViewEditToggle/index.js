@@ -4,8 +4,10 @@ import { observer } from 'mobx-react'
 import {
    EditorContainer,
    EditorContainerHeading,
-   EditButton
+   EditButton,
+   Input
 } from '../../StyledComponents'
+import WithToggle from '../../hocs/WithToggle'
 
 @observer
 class ViewEditToggle extends Component {
@@ -17,6 +19,7 @@ class ViewEditToggle extends Component {
 
    render() {
       const { toggleStatus, onToggle } = this.props
+      console.log(this.props)
       return (
          <EditorContainer>
             <EditorContainerHeading>ViewEditToggle</EditorContainerHeading>
@@ -41,4 +44,4 @@ class ViewEditToggle extends Component {
    }
 }
 
-export default ViewEditToggle
+export default WithToggle(ViewEditToggle)

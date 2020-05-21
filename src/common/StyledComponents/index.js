@@ -2,7 +2,7 @@ import tw from 'tailwind.macro'
 import styled from '@emotion/styled'
 
 export const EditorContainer = styled.div`
-   ${tw`flex flex-col justify-center items-center w-screen bg-gray-300 p-8`}
+   ${tw`flex flex-col justify-center items-center h-20 w-screen bg-gray-300 p-12`}
 `
 export const EditorContainerHeading = styled.div`
    ${tw`text-xl font-semibold`}
@@ -18,7 +18,7 @@ export const Span = styled.span`
 `
 
 export const CollapseExpandContainer = styled.div`
-   ${tw`flex flex-col justify-center items-center  w-screen bg-gray-400 p-8`}
+   ${tw`flex flex-col justify-center items-center  w-screen bg-gray-400 p-4`}
 `
 export const CollapseExpandHeading = styled.div`
    ${tw`text-xl font-semibold`}
@@ -38,14 +38,14 @@ export const CollapseButton = styled.button`
 `
 
 export const DeviceTypeContainer = styled.div`
-   ${tw`flex flex-col justify-center items-center p-8 bg-gray-300 w-screen `}
+   ${tw`flex flex-col justify-center items-center h-20  p-8 bg-gray-300 w-screen `}
 `
 export const DeviceTypeTextHeading = styled.div`
    ${tw`font-semibold text-xl`}
 `
 
 export const MouseCoordinatesContainer = styled.div`
-   ${tw`flex flex-col justify-center items-center p-8 bg-gray-300 w-screen`}
+   ${tw`flex flex-col justify-center items-center h-20 p-8 bg-gray-300 w-screen`}
 `
 export const MouseCoordinatesHeading = styled.div`
    ${tw`text-xl font-semibold`}
@@ -56,5 +56,5 @@ export const Container = styled.div`
 `
 
 export const Header = styled.h1`
-   ${tw`text-4xl font-bold items-center `}
+   ${tw`text-4xl h-20 font-bold flex items-center justify-center`}
 `

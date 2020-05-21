@@ -13,11 +13,11 @@ const WithScreenSizeDetectors = WrappedComponent => {
 
       updateSize = () => {
          if (window.innerWidth < 576) {
-            this.size = 'mobile'
+            this.size = 'Mobile'
          } else if (window.innerWidth >= 576 && window.innerWidth < 992) {
-            this.size = 'tablet'
+            this.size = 'Tablet'
          } else if (window.innerWidth >= 992) {
-            this.size = 'desktop'
+            this.size = 'Desktop'
          }
       }
 

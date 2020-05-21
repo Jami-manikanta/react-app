@@ -16,7 +16,7 @@ class CollapseExpand extends Component {
       const { toggleStatus, onToggle } = this.props
       return (
          <CollapseExpandContainer>
-            <CollapseExpandHeading>ColapseExpand</CollapseExpandHeading>
+            <CollapseExpandHeading>CollapseExpand</CollapseExpandHeading>
             <ShoppingListContainer>
                <ShoppingListText> Sample shoping List:</ShoppingListText>
                <ShoppingListcart>

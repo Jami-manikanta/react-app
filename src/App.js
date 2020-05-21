@@ -87,7 +87,7 @@ export default function App() {
                {/* <Route path="/ecommerce-app">
                         <ECommerceApp />
                     </Route>
-                    <Route path="/" component={SignInRoute} /> */}
+   <Route path="/" component={SignInRoute} /> */}
                <Route path='/' component={PracticeAdvancedConceptsRoute} />
             </Switch>
          </Router>

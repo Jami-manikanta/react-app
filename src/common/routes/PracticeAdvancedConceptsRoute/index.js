@@ -16,11 +16,9 @@ class PracticeAdvancedConceptsRoute extends Component {
    render() {
       return (
          <Container>
-            <Header className='h-24 bg-gray-300 flex items-center justify-center'>
-               Hoc's Usage
-            </Header>
-            <CollapseExpand />
+            <Header>Hoc's Usage</Header>
             <ViewEditToggle />
+            <CollapseExpand />
             <DeviceTypeText />
             <Header>RenderProps Usage</Header>
             <DisplayMouseCoordinates
