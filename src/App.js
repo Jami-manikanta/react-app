@@ -63,15 +63,16 @@
 //     );
 // }
 
-import React from "react";
-import { Provider } from "mobx-react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from 'react'
+import { Provider } from 'mobx-react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 //import stores from "./ECommerceApp/stores";
 //import authenticationStore from "./Authentication/stores";
 //import ECommerceApp from "./ECommerceApp/components/ECommerceApp";
 //mport SignInRoute from "./Authentication/Routes/SignInRoute/SignInRoute";
-import HocsPractice from "./common/components/HocsPractice";
-import { observable } from "mobx";
+//import HocsPractice from './common/components/HocsPractice'
+//import { observable } from 'mobx'
+import PracticeAdvancedConceptsRoute from './common/routes/PracticeAdvancedConceptsRoute'
 
 // const x = {
 //     authenticationStore,
@@ -79,17 +80,17 @@ import { observable } from "mobx";
 // }; {...x}
 
 export default function App() {
-    return (
-        <Provider>
-            <Router>
-                <Switch>
-                    {/* <Route path="/ecommerce-app">
+   return (
+      <Provider>
+         <Router>
+            <Switch>
+               {/* <Route path="/ecommerce-app">
                         <ECommerceApp />
                     </Route>
                     <Route path="/" component={SignInRoute} /> */}
-                    <Route path="/" component={HocsPractice} />
-                </Switch>
-            </Router>
-        </Provider>
-    );
+               <Route path='/' component={PracticeAdvancedConceptsRoute} />
+            </Switch>
+         </Router>
+      </Provider>
+   )
 }
