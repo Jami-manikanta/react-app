@@ -1,50 +1,47 @@
-import { observable, action } from "mobx";
-import { bindPromiseWithOnSuccess } from "@ib/mobx-promise";
-import { API_INITIAL } from "@ib/api-constants";
+import { observable, action } from 'mobx'
+import { bindPromiseWithOnSuccess } from '@ib/mobx-promise'
+import { API_INITIAL } from '@ib/api-constants'
 class AuthenticationStore {
-    @observable getAuthenticationApiStatus;
-    @observable getAuthenticationApiError;
-    @observable user;
-    constructor(authenticationService) {
-        this.authenticationService = authenticationService;
-        this.init();
-    }
+   @observable getAuthenticationApiStatus
+   @observable getAuthenticationApiError
+   @observable user
+   constructor(authenticationService) {
+      this.authenticationService = authenticationService
+      this.init()
+   }
 
-    init() {
-        this.getAuthenticationApiStatus = API_INITIAL;
-        this.getAuthenticationApiError = null;
-    }
+   init() {
+      this.getAuthenticationApiStatus = API_INITIAL
+      this.getAuthenticationApiError = null
+   }
 
-    @action.bound
-    setAuthenticationAPIResponse(authenticationResponse) {
-        this.user = authenticationResponse;
-    }
+   @action.bound
+   setAuthenticationAPIResponse(authenticationResponse) {
+      this.user = authenticationResponse
+   }
 
-    @action.bound
-    setAuthenticationAPIError(error) {
-        this.getAuthenticationApiError = error;
-    }
-    @action.bound
-    setAuthenticationAPIStatus(apiStatus) {
-        this.getAuthenticationApiStatus = apiStatus;
-    }
+   @action.bound
+   setAuthenticationAPIError(error) {
+      this.getAuthenticationApiError = error
+   }
+   @action.bound
+   setAuthenticationAPIStatus(apiStatus) {
+      this.getAuthenticationApiStatus = apiStatus
+   }
 
-    @action.bound
-    getAuthenticationAPI() {
-        const authenticationPromise = this.authenticationService.getAuthenticationAPI();
-        return bindPromiseWithOnSuccess(authenticationPromise)
-            .to(
-                this.getAuthenticationApiStatus,
-                this.setAuthenticationAPIResponse
-            )
-            .catch(this.setAuthenticationAPIError);
-    }
+   @action.bound
+   getAuthenticationAPI() {
+      const authenticationPromise = this.authenticationService.getAuthenticationAPI()
+      return bindPromiseWithOnSuccess(authenticationPromise)
+         .to(this.getAuthenticationApiStatus, this.setAuthenticationAPIResponse)
+         .catch(this.setAuthenticationAPIError)
+   }
 
-    @action.bound
-    clearStore() {
-        this.init();
-    }
+   @action.bound
+   clearStore() {
+      this.init()
+   }
 }
-export default AuthenticationStore;
+export default AuthenticationStore
 
 //export { AuthenticationStore } from "./AuthenticationStore";
