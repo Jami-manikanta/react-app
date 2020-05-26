@@ -66,28 +66,27 @@
 import React from 'react'
 import { Provider } from 'mobx-react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import stores from './ECommerceApp/stores'
+import { productStore, cartStore } from './ECommerceApp/stores'
 import { authenticationStore } from './Authentication/stores/index'
 import ECommerceApp from './ECommerceApp/components/ECommerceApp'
-import SignInRoute from './Authentication/Routes/SignInRoute/SignInRoute'
-//import HocsPractice from './common/components/HocsPractice'
-//import { observable } from 'mobx'
-//import PracticeAdvancedConceptsRoute from './common/routes/PracticeAdvancedConceptsRoute'
+import SignInForm from './Authentication/components/SignInForm'
+// import PracticeAdvancedConceptsRoute from './common/routes/PracticeAdvancedConceptsRoute'
 
-const x = {
+const stores = {
    authenticationStore,
-   stores
+   productStore,
+   cartStore
 }
 
 export default function App() {
    return (
-      <Provider {...x}>
+      <Provider {...stores}>
          <Router>
             <Switch>
                <Route path='/ecommerce-app'>
                   <ECommerceApp />
                </Route>
-               <Route path='/' component={SignInRoute} />
+               <Route path='/' component={SignInForm} />
                {/* <Route path='/' component={PracticeAdvancedConceptsRoute} /> */}
             </Switch>
          </Router>

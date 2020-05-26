@@ -15,7 +15,6 @@ import {
 } from '../../styledComponents'
 
 import { setAccessToken } from '../../../utils/StorageUtils'
-import authenticationStore from '../../stores/index'
 
 @inject('authenticationStore')
 @observer
@@ -25,13 +24,13 @@ class LoginPage extends React.Component {
    @observable errorMessage = ''
 
    componentDidMount() {
-      const { user } = authenticationStore
+      const { user } = this.props.authenticationStore
    }
 
    handleLogin = event => {
       event.preventDefault()
       if (this.userInput !== '' && this.userPassword !== '') {
-         const { user } = authenticationStore
+         const { user } = this.props.authenticationStore
          const { history } = this.props
          history.replace('/ecommerce-app')
          setAccessToken(user)
