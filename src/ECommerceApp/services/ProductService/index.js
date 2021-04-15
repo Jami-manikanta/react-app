@@ -18,7 +18,7 @@ class ProductService {
       return networkCallWithApisauce(
          this.api,
          //  'v1/products/',
-         'products?limit=3&offset=0',
+         'products?limit=9&offset=0',
          {},
          apiMethods.get
       )

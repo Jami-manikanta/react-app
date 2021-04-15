@@ -18,7 +18,7 @@
 // import {enableLogging} from 'mobx-logger';
 // import LoginPage from "./components/LoginPage";
 // import SampleExample from "./components/SampleExample";
-// import ECommerceApp from "./ECommerceApp/components/ECommerceApp";
+// //import ECommerceApp from "./ECommerceApp/components/ECommerceApp";
 // const config={
 //   predicate:()=>true,
 //   action:true,
@@ -51,10 +51,9 @@
 //           <Route path="/sample">
 //             <SampleExample/>
 //           </Route>
-
-//           <Route path="/ecommerce">
+//          {/* <Route path="/ecommerce">
 //             <ECommerceApp/>
-//           </Route>
+//           </Route>  */}
 
 //           <Route path="/" component={Home}/>
 //         </Switch>
@@ -63,6 +62,7 @@
 //     );
 // }
 
+
 import React from 'react'
 import { Provider } from 'mobx-react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -70,6 +70,7 @@ import { productStore, cartStore } from './ECommerceApp/stores'
 import { authenticationStore } from './Authentication/stores/index'
 import ECommerceApp from './ECommerceApp/components/ECommerceApp'
 import SignInForm from './Authentication/components/SignInForm'
+import GridGameComponent from "./components/GridGameComponent"
 // import PracticeAdvancedConceptsRoute from './common/routes/PracticeAdvancedConceptsRoute'
 
 const stores = {
@@ -82,14 +83,16 @@ export default function App() {
    return (
       <Provider {...stores}>
          <Router>
-            <Switch>
+            <Switch>   
                <Route path='/ecommerce-app'>
                   <ECommerceApp />
-               </Route>
-               <Route path='/' component={SignInForm} />
-               {/* <Route path='/' component={PracticeAdvancedConceptsRoute} /> */}
+               </Route> 
+               <Route path='/' component={SignInForm} /> 
+
+                {/* <Route path='/' component={PracticeAdvancedConceptsRoute} />  */}
             </Switch>
          </Router>
-      </Provider>
+       </Provider>
    )
 }
+   
